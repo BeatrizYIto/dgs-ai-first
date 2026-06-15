@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "repo-source": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./src",
+        "./specs",
+        "./skills",
+        "./prompts"
+      ]
+    },
+
+    "novatech-docs": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./docs/novatech"
+      ],
+      "env": {
+        "MCP_FILESYSTEM_READONLY": "1"
+      }
+    },
+
+    "retrieval-corpus": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./data/retrieval-corpus"
+      ],
+      "env": {
+        "MCP_FILESYSTEM_READONLY": "1"
+      }
+    },
+
+    "git": {
+      "command": "uvx",
+      "args": ["mcp-server-git", "--repository", "."]
+    },
+
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    }
+  }
+}
